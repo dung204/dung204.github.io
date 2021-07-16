@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/notifications.css">
+
+  <script defer="defer" src="scripts/time.js"></script>
+  <script defer="defer" src="scripts/index.js"></script>
+  <script></script>
+
+</head>
+<body>
+  <!-- ===================NOTIFICATIONS=================== -->
+  <!-- Each one has: an icon, content, a close button -->
+  <div class="notification" id="running">
+    <div class="circle">
+      <span class="material-icons" style="font-size: 46px;">
+        notifications
+      </span>
+    </div>
+    <span class="content">The timer has started</span>
+    <div class="close-icon">
+      <span class="material-icons">
+        close
+      </span>
+    </div>
+  </div>
+  
+  <div class="notification" id="stopped">
+    <div class="circle">
+      <span class="material-icons" style="font-size: 46px;">
+        notifications
+      </span>
+    </div>
+    <span class="content">The timer has stopped</span>
+    <div class="close-icon">
+      <span class="material-icons">
+        close
+      </span>
+    </div>
+  </div>
+
+  <div class="notification" id="start-warning">
+    <div class="circle">
+      <span class="material-icons" style="font-size: 46px;">
+        warning
+      </span>
+    </div>
+    <span class="content">
+      The timer can't start running.<br> 
+      Please enter your time
+    </span>
+    <div class="close-icon">
+      <span class="material-icons">
+        close
+      </span>
+    </div>
+  </div>
+
+  <div class="notification" id="reset-noti">
+    <div class="circle">
+      <span class="material-icons" style="font-size: 46px;">
+        notifications
+      </span>
+    </div>
+    <span class="content">The timer has been reset</span>
+    <div class="close-icon">
+      <span class="material-icons">
+        close
+      </span>
+    </div>
+  </div>
+
+  <div class="notification" id="reset-warning">
+    <div class="circle">
+      <span class="material-icons" style="font-size: 46px;">
+        notifications
+      </span>
+    </div>
+    <span class="content">
+      The timer is running. <br>
+      Stop the timer to reset
+    </span>
+    <div class="close-icon">
+      <span class="material-icons">
+        close
+      </span>
+    </div>
+  </div>
+
+  <!-- ===================TIMER=================== -->
+  <div class="section">
+    <div class="time">
+      <button class="btn-up"></button>
+      <button class="btn-down"></button>
+      <input type="text" id="hour">
+    </div>
+    <div class="time">
+      <button class="btn-up"></button>
+      <button class="btn-down"></button>
+      <input type="text" id="minute">
+    </div>
+    <div class="time" id="end">
+      <button class="btn-up"></button>
+      <button class="btn-down"></button>
+      <input type="text" id="second">
+    </div>
+  </div>
+
+  <!-- ===================BUTTONS=================== -->
+  <div class="btn-container">
+    <p class="buttons" id="start-btn" content="Start">
+      <span class="material-icons" style="font-size: 40px;">play_arrow</span>
+    </p>
+    <p class="buttons" id="stop-btn" content="Stop">
+      <span class="material-icons" style="font-size: 40px;">stop</span>
+    </p>
+    <p class="buttons" id="reset-btn" content="Reset">
+      <span class="material-icons" style="font-size: 40px;">replay</span>
+    </p>
+  </div>
+</body>
+</html>

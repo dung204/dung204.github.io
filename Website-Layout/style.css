@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box; 
+}
+
+body { 
+  background: #f1f1f1; 
+  padding: 20px;
+}
+
+div { 
+  text-align: center;
+  font: 20px Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+.header {
+  font-size: 45px;
+  padding: 20px;
+  display: block;
+}
+
+.nav {
+  padding: 1px;
+  display: block;
+  
+}
+
+.leftcol {
+  float: left;
+  width: 75%;
+}
+
+.rightcol {
+  float: left;  
+  width: 25%;
+  padding-left: 30px;
+}
+
+.card {
+  text-align: left;
+  padding: 40px;
+  margin-top: 30px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.footer {
+  padding: 20px;
+  display: block;
+}
+
+.header, .nav, .footer, .card {
+  background: white;
+}
+
+.fakeimg {
+  background: rgb(161, 161, 161);
+  text-align: left;
+  padding: 4px 20px;
+}

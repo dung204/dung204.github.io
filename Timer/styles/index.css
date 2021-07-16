@@ -1,0 +1,203 @@
+/* ===================GLOBAL VARIABLES=================== */
+:root {
+  --red: hsl(0, 100%, 50%);
+  --yellow: hsla(61, 90%, 50%);
+  --green: hsl(101, 90%, 40%);
+  --lightblue: hsl(175, 100%, 81%);
+  --gray: hsl(0, 0%, 85%);
+  --shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2), 0 6px 20px 0 hsla(0, 0%, 0%, 0.19);
+  --shadow-blur: 30px;
+  --hover-shadow: 0px 0px var(--shadow-blur) hsl(195, 83%, 45%);
+}
+
+/* ===================BODY=================== */
+*:not(input[type=text], .btn-up, .btn-down) {
+  color: white;
+}
+
+/* Center the timer */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--gray);
+  overflow: auto;
+}
+
+
+/* ===================TIMER=================== */
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  background-color: var(--yellow);
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+  margin-top: 25px;
+}
+
+.time {
+  /* border: 1px solid red; */
+  display: flex;
+  flex: 33.33%;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: 250px;
+  padding: 40px;
+  position: relative;
+}
+
+/* ===================BUTTONS (+ and -)=================== */
+.btn-up {
+  position: absolute;
+  padding: 0 20px;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.btn-down {
+  position: absolute;
+  padding: 0 20px;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.btn-up, .btn-down {
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  background: transparent;
+  font-size: 50px;
+  transition: background 0.2s;
+}
+
+
+.btn-up::after {
+  content: "+";
+}
+
+.btn-down::after {
+  content: "-";
+}
+
+.btn-up:hover, .btn-down:hover {
+  background: var(--red);
+}
+
+/* Time Input */
+.time input[type=text] {
+  width: 100px;
+  height: 150px;
+  font-size: 70px;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  transition: box-shadow 0.5s;
+}
+
+.time input[type=text]:focus {
+  box-shadow: var(--hover-shadow);
+}
+
+/* Input when the timer is running */
+.time input[type=text]:disabled {
+  background-color: hsl(256, 100%, 50%);
+  color: black;
+  color: white;
+}
+/* ===================BUTTONS (play, pause, reset)=================== */
+
+/* Container */
+.btn-container {
+  display: flex;  
+  justify-content: center;
+}
+
+/* Style for animation (overflow for hiding tooltip text) */
+.buttons {
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 40px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+  transition: width 0.8s, box-shadow 0.4s;
+}
+
+/* Animation for icons (just reset) */
+.material-icons {
+  transition: transform 0.8s;
+}
+
+/* Background color for icons */
+#start-btn {
+  background: var(--green);
+}
+
+#stop-btn {
+  background-color: var(--red);
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#reset-btn {
+  background: orange;
+}
+
+/* Text for specification setup (opacity and visibility for hiding those texts) */
+#start-btn::after, #stop-btn::after, #reset-btn::after {
+  content: attr(content);
+  font: 30px Arial;
+  transform: translateX(25px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s, visibility 1s;
+}
+
+/* Rotate the icon when hovering the buttons */
+#reset-btn:hover .material-icons {
+  transform: rotate(-360deg);
+}
+
+/* Add some shadow, extend the width of the buttons */
+.buttons:hover {
+  box-shadow: var(--hover-shadow);
+  width: 156px;
+}
+
+/* Show tooltip text gradually when hovering the buttons */
+#start-btn:hover::after, 
+#stop-btn:hover::after, 
+#reset-btn:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ===================RESPONSIVE (work in progress)=================== */
+@media screen and (orientation: portrait) {
+  body, .btn-container {
+    flex-direction: column;
+  }
+  #stop-btn {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .section {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

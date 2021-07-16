@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Feedback</title>
+  <link rel="icon" href="Images/coffeelogo.png">
+
+  <style>
+    .pattern { margin-bottom: 15px; }
+    textarea { 
+      resize: none; 
+      font-family: "Arial";
+    }
+  </style>
+</head>
+<body>
+  <img src="Images/coffeelogo.png" alt="Coffee Shop Logo" width="20%">
+  <h1>Coffee Shop</h1>
+  <hr>
+  
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="ourcoffee.html">Our coffee</a></li>
+    <li><a href="">About us</a></li>
+    <li><a href="#feedback">Feedback</a></li>
+  </ul>
+  <hr>
+
+  <h1 id="feedback">Feedback</h1>
+  <p>
+    Let us know what you think of our shop by fill in and submitting your feedback below, 
+    one feedback from you (either positive and negative) do help us develop our shop
+  </p>
+  <hr>
+
+  <form action="">
+    <fieldset>
+      <legend>My feedback</legend>
+      <div class="pattern">
+        <label for="firstname">First name:</label>
+        <input type="text" id="firstname" required>
+      </div>
+      
+      <div class="pattern">
+        <label for="lastname">Last name:</label>
+        <input type="text" id="lastname" required>
+      </div>
+      
+      <div class="pattern">
+        <label for="time">How long have you known our shop?</label>
+        <select name="time" id="time">
+          <option value="">About a week</option>
+          <option value="">About few weeks</option>
+          <option value="">About a month</option>
+          <option value="">About few months</option>
+          <option value="">About a year</option>
+          <option value="">More than above</option>
+        </select>
+      </div>
+
+      <div class="pattern">
+        <label for="bestcoffee">Which coffee do you think is the best here?</label>
+        <select name="bestcoffee" id="bestcoffee">
+          <option value="">Americano</option>
+          <option value="">Black coffee</option>
+          <option value="">Cappuccino</option>
+          <option value="">Espresso</option>
+          <option value="">Latte</option>
+        </select>
+        
+      </div>
+
+      <div class="pattern">
+        <label for="worstcoffee">How about the worst?</label>
+        <select name="worstcoffee" id="worstcoffee">
+          <option value="">Americano</option>
+          <option value="">Black coffee</option>
+          <option value="">Cappuccino</option>
+          <option value="">Espresso</option>
+          <option value="">Latte</option>
+        </select>
+      </div>
+
+      <div class="pattern">
+        <label for="service">How about the service?</label>
+        <div>
+          <input type="radio" id="verybad" name="rating">
+          <label for="verybad">Very bad</label>
+        </div>
+        <div>
+          <input type="radio" id="bad" name="rating">
+          <label for="bad">Bad</label>
+        </div>
+        <div>
+          <input type="radio" id="normal" name="rating" checked>
+          <label for="normal">So so, not bad</label>
+        </div>
+        <div>
+          <input type="radio" id="nice" name="rating">
+          <label for="nice">Nice</label>
+        </div>
+        <div>
+          <input type="radio" id="awesome" name="rating">
+          <label for="awesome">Awesome</label>
+        </div>
+      </div>
+
+      <div class="pattern">
+        <label for="other">Other feedback, please write down below:</label>
+      </div>
+      <div class="pattern">
+        <textarea name="other" id="other" cols="30" rows="10" placeholder="My feedback here"></textarea>
+      </div>
+
+      <div class="pattern">
+        <input type="submit" id="submitBtn">
+      </div>
+    </fieldset>
+  </form>
+
+  <script>
+    document.querySelector("#submitBtn").onclick = () => {
+      let firstname = document.querySelector("#firstname").value.trim();
+      let lastname = document.querySelector("#lastname").value.trim();
+      if(firstname !== "" && lastname !== "")
+        alert("Your feedback has been sent to us, thanks again for supporting our shop")
+    }
+  </script>
+</body>
+</html>
