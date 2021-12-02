@@ -121,11 +121,11 @@ body {
   top: 1rem;
   right: 1rem;
   cursor: pointer;
-  color: white;
   transition: background 200ms;
 }
 
 .toggle-fullscreen-btn > .material-icons {
+  color: white;
   font-size: 50px;
 }
 
