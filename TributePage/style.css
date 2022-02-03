@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+}
+
+#main {
+  background: rgb(226, 226, 226);
+}
+
+#title-div {
+  text-align: center;
+  padding: 10px;
+}
+
+#title {
+  font-size: 65px;
+}
+
+#img-div {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+#img-div > img {
+  width: 400px;
+}
+
+#img-div > figcaption {
+  margin-top: 10px;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.timestamp {
+  margin: 0 30%;
+  max-width: 600px;
+  padding: 0;
+}
+
+.timestamp-item {
+  line-height: 2;
+}
+
+#other-img {
+  padding: 20px;
+}
+
+.img-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 30px;
+}
+
+.img-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-item > img {
+  width: 300px;
+}
+
+#hyperlink {
+  padding: 20px;
+}

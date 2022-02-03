@@ -1,0 +1,120 @@
+:root {
+  --font-size: 25px;
+  --font-family: Arial, sans-serif;
+  --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(88, 88, 88);
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.btn-container {
+  height: 25vh;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container > button {
+  font-size: var(--font-size);
+  font-weight: bold;
+  padding: 0.85em;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+#upload-btn {
+  background: hsl(126, 100%, 43%);
+}
+
+#delete-btn {
+  background: hsl(0, 100%, 50%);
+}
+
+#upload-btn:hover,
+#delete-btn:hover {
+  color: hsl(51, 100%, 50%);
+}
+
+#upload-btn:active {
+  background: hsl(126, 55%, 43%);
+}
+
+#delete-btn:active {
+  background: hsl(0, 55%, 50%);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.img-container {
+  height: 75vh;
+  counter-reset: index-count;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  place-content: start center;
+  gap: 50px;
+}
+
+.img-card {
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: var(--shadow);
+  counter-increment: index-count;
+  transition: transform 0.4s;
+  cursor: pointer;
+}
+
+.img-card::after {
+  content: counter(index-count);
+  margin-top: 1em;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+.img-card > img {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+}
+
+.img-card:hover {
+  transform: scale(1.1);
+}
